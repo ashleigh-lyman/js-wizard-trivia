@@ -1,149 +1,26 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>JS Wizard Trivia</title>
 
-        <meta name="author" content="Mike Goldberg, Nicole Forke, Ashleigh Lyman">
-        <meta name="viewport" content="width=device-width">
-        <meta name="description" content="Single Page Application Trivia Game">
-        <meta http-equiv="pragma" content="no-cache">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Wizard Trivia</title>
 
-        <style>
-          /* general */
-          body {
-            font-family: Arial, Helvetica,
-            sans-serif;
-            color: #333333;
-          }
-          header div {
-            font-size: 1.25rem;
-          }
-          h1 {
-            color: #333333;
-            font-size: 3rem;
-            margin-bottom: .5rem;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            border-bottom: 1px solid #333333;
-          }
-          h1 svg {
-              height: 3rem;
-              width: 3rem;
-              margin-right: .5rem;
-          }
-          h2 {
-            margin-bottom: 1.5rem;
-            text-align: center;
-            color: #333333;
-          }
-          main {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 4rem;
-            padding-bottom: 4rem;
-            text-align: center;
-          }
-          p {
-            text-align:center;
-            color: #333333;
-          }
-          /* Let's Begin Button */
-          .btn-big {
-            display: inline-block;
-            background-image: linear-gradient(to right, gray, white, gray);
-            text-align:center;
-            padding: 15px 15px;
-            width: 100px;
-            height: 20px;
-            border-radius: 5px;
-          }
+    <meta name="author" content="Mike Goldberg, Nicole Forke, Ashleigh Lyman">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Single Page Application Trivia Game">
+    <meta http-equiv="pragma" content="no-cache">
 
-          footer {
-            padding: 1rem 0;
-            text-align: center;
-            font-size: .75rem;
-          }
 
-          /* utilities */
-          .container {
-            max-width: 800px;
-            margin: 0 auto;
-          }
-          .disabled {
-            pointer-events: none;
-            color: #aaa;
-          }
-          /* question pages */
-          main > div {
-            max-width: 575px;
-            width: 100%;
-          }
-          .answer-container {
-            margin-bottom: 1.5rem
-          }
-          .answer-item {
-            padding: .5rem;
-            border: 1px solid #dcdcdc;
-            border-radius: 3px;
-            background-color: #eee;
-            margin-bottom: .25rem;
-            transition: background-color 300ms, box-shadow 300ms;
-          }
-          .answer-item:hover {
-            background-color: #fafafa;
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-          }
-          .answer-item span {
-            padding-right: .5rem;
-            margin-right: .25rem;
-            color: gray;
-            border-right: 1px solid #dcdcdc;
-            font-size: .875rem;
-          }
 
-          /* navigation */
-          .nav-container {
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-          }
-          /* Previous and Next Buttons */
-          .nav-item {
-            margin: 0.5rem;
-            font-size: .875rem;
-            text-decoration: none;
-            color: blue;
-            display: inline-block;
-            background-image: linear-gradient(to right, gray, white, gray);
-            text-align: center;
-            padding: 15px 15px;
-            width: 100px;
-            height: 20px;
-            border-radius: 5px;
-          }
-          .nav-item:visited {
-            color: blue;
-          }
-          .nav-item.disabled {
-            pointer-events: none;
-            color: #aaa;
-          }
-        </style>
-        <!-- TODO: move css to external file -->
-        <!-- <link rel="stylesheet" href="../src/css/trivia.css" type="text/css" /> -->
-    </head>
+    <link rel="stylesheet" href="../src/css/trivia.css" type="text/css" />
 
-    <body>
-      <header class="container">
+</head>
+
+<body>
+    <header class="container">
         <h1>
-            <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="js-square" role="img"
-                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="logo">
+            <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="js-square" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="logo">
                 <path fill="currentColor"
                     d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM243.8 381.4c0 43.6-25.6 63.5-62.9 63.5-33.7 0-53.2-17.4-63.2-38.5l34.3-20.7c6.6 11.7 12.6 21.6 27.1 21.6 13.8 0 22.6-5.4 22.6-26.5V237.7h42.1v143.7zm99.6 63.5c-39.1 0-64.4-18.6-76.7-43l34.3-19.8c9 14.7 20.8 25.6 41.5 25.6 17.4 0 28.6-8.7 28.6-20.8 0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5 0-31.6 24.1-55.6 61.6-55.6 26.8 0 46 9.3 59.8 33.7L368 290c-7.2-12.9-15-18-27.1-18-12.3 0-20.1 7.8-20.1 18 0 12.6 7.8 17.7 25.9 25.6l10.5 4.5c35.8 15.3 55.9 31 55.9 66.2 0 37.8-29.8 58.6-69.7 58.6z"
                     class=""></path>
@@ -154,7 +31,6 @@
         <div>
             Welcome to JS Wizard Trivia!
         </div>
-      </header>
-      <!-- TODO: make this container stretch remaining space between header and footer -->
-      <main class="container">
-
+    </header>
+    <!-- TODO: make this container stretch remaining space between header and footer -->
+    <main class="container">

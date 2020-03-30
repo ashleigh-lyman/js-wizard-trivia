@@ -1,27 +1,184 @@
 body {
-  font-family: Arial, Helvetica,
-  sans-serif;
-  color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
 }
+
 main {
-  max-width: 800px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
 }
+
 h1 {
-  font-size: 3rem;
-  margin-bottom: .5rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  border-bottom: 1px solid #333;
+    font-size: 3rem;
+    margin-bottom: .5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid #333;
 }
+
 h1 svg {
     height: 3rem;
     width: 3rem;
     margin-right: .5rem;
 }
+
 .header div {
-  font-size: 1.25rem;
+    font-size: 1.25rem;
+}
+
+
+/*STYLE SECTION MOVED FROM HEADER.EJS*/
+
+
+/* general */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333333;
+}
+
+header div {
+    font-size: 1.25rem;
+}
+
+h1 {
+    color: #333333;
+    font-size: 3rem;
+    margin-bottom: .5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid #333333;
+}
+
+h1 svg {
+    height: 3rem;
+    width: 3rem;
+    margin-right: .5rem;
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #333333;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    color: #333333;
+}
+
+
+/* Let's Begin Button */
+
+.btn-big {
+    display: inline-block;
+    background-image: linear-gradient(to right, gray, white, gray);
+    text-align: center;
+    padding: 15px 15px;
+    width: 100px;
+    height: 20px;
+    border-radius: 5px;
+}
+
+footer {
+    padding: 1rem 0;
+    text-align: center;
+    font-size: .75rem;
+}
+
+
+/* utilities */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.disabled {
+    pointer-events: none;
+    color: #aaa;
+}
+
+
+/* question pages */
+
+main>div {
+    max-width: 575px;
+    width: 100%;
+}
+
+.answer-container {
+    margin-bottom: 1.5rem
+}
+
+.answer-item {
+    padding: .5rem;
+    border: 1px solid #dcdcdc;
+    border-radius: 3px;
+    background-color: #eee;
+    margin-bottom: .25rem;
+    transition: background-color 300ms, box-shadow 300ms;
+}
+
+.answer-item:hover {
+    background-color: #fafafa;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.answer-item span {
+    padding-right: .5rem;
+    margin-right: .25rem;
+    color: gray;
+    border-right: 1px solid #dcdcdc;
+    font-size: .875rem;
+}
+
+
+/* navigation */
+
+.nav-container {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+/* Previous and Next Buttons */
+
+.nav-item {
+    margin: 0.5rem;
+    font-size: .875rem;
+    text-decoration: none;
+    color: blue;
+    display: inline-block;
+    background-image: linear-gradient(to right, gray, white, gray);
+    text-align: center;
+    padding: 15px 15px;
+    width: 100px;
+    height: 20px;
+    border-radius: 5px;
+}
+
+.nav-item:visited {
+    color: blue;
+}
+
+.nav-item.disabled {
+    pointer-events: none;
+    color: #aaa;
 }
